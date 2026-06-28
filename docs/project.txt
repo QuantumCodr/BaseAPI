@@ -1,0 +1,202 @@
+Agreed. One last reset and we lock it.
+
+This time we keep only what supports **Quantum Core’s mission**:
+
+> Build authentication + user management once → reuse across projects.
+
+No drift. No extra architecture. No unrelated framework ideas.
+
+# Final Quantum Core Structure (LOCKED)
+
+```plaintext
+quantum-core/
+│
+├── quantum_core/                     # Source package
+│
+│   ├── __init__.py
+│   ├── main.py                       # FastAPI entry
+│
+│   ├── auth/                         # Authentication
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── schemas.py
+│   │   ├── service.py
+│   │   ├── router.py
+│   │   └── dependencies.py
+│   │
+│   ├── users/                        # User management
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── schemas.py
+│   │   ├── service.py
+│   │   ├── router.py
+│   │   └── dependencies.py
+│   │
+│   ├── database/                     # DB infrastructure
+│   │   ├── __init__.py
+│   │   ├── base.py
+│   │   ├── session.py
+│   │   └── migrations/
+│   │       └── versions/
+│   │
+│   ├── core/                         # Shared framework internals
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── security.py
+│   │   ├── exceptions.py
+│   │   ├── responses.py
+│   │   └── dependencies.py
+│   │
+│   └── utils/                        # Shared reusable helpers
+│       ├── __init__.py
+│       ├── email.py
+│       ├── validators.py
+│       └── helpers.py
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_auth.py
+│   └── test_users.py
+│
+├── .env.example
+├── .gitignore
+├── pyproject.toml
+├── README.md
+├── requirements.txt
+├── alembic.ini
+└── LICENSE
+```
+
+---
+
+# Folder Responsibilities (LOCKED)
+
+### `auth/`
+
+Reusable authentication.
+
+Endpoints:
+
+```plaintext
+POST /auth/register
+POST /auth/login
+POST /auth/logout
+POST /auth/refresh
+POST /auth/forgot-password
+POST /auth/reset-password
+POST /auth/verify-email
+```
+
+---
+
+### `users/`
+
+User account management.
+
+Endpoints:
+
+```plaintext
+GET /users/me
+PATCH /users/me
+DELETE /users/me
+```
+
+Optional later:
+
+```plaintext
+GET /users
+GET /users/{id}
+```
+
+---
+
+### `database/`
+
+Only:
+
+* PostgreSQL connection
+* SQLAlchemy setup
+* Alembic migrations
+
+No business logic.
+
+---
+
+### `core/`
+
+Shared infrastructure:
+
+* Config
+* JWT
+* Password hashing
+* Responses
+* Exceptions
+* Shared dependencies
+
+---
+
+### `utils/`
+
+Pure reusable functions.
+
+Examples:
+
+```plaintext
+send_email()
+validate_email()
+normalize_string()
+```
+
+No business rules.
+
+---
+
+### `tests/`
+
+Tests only.
+
+---
+
+# Rules (LOCKED)
+
+File naming:
+
+```plaintext
+models.py
+schemas.py
+service.py
+router.py
+```
+
+API:
+
+```plaintext
+REST
+JSON
+HTTP status codes
+```
+
+Security:
+
+```plaintext
+Hash passwords
+Never expose hashes
+Validate input
+Protect routes with JWT
+```
+
+Extension:
+
+Future projects add:
+
+```plaintext
+properties/
+payments/
+bookings/
+```
+
+Quantum Core itself stays unchanged.
+
+---
+
+This is now the canonical structure we continue building from. No changes unless we intentionally version the architecture.
