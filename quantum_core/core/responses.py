@@ -9,6 +9,7 @@ class APIResponse:
     def success(
         message: str = "Success",
         data: Any = None,
+        meta: dict | None = None,
         status_code: int = 200
     ):
 
@@ -17,14 +18,16 @@ class APIResponse:
             content={
                 "success": True,
                 "message": message,
-                "data": data
+                "data": data,
+                "meta": meta or {}
             }
         )
 
     @staticmethod
     def error(
-        message: str = "Error",
-        errors: Any = None,
+        message: str,
+        errors: list | None = None,
+        meta: dict | None = None,
         status_code: int = 400
     ):
 
@@ -33,6 +36,7 @@ class APIResponse:
             content={
                 "success": False,
                 "message": message,
-                "errors": errors
+                "errors": errors or [],
+                "meta": meta or {}
             }
         )

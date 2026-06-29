@@ -1,7 +1,9 @@
 from fastapi import Request
-from fastapi.responses import JSONResponse
+from fastapi import HTTPException
+from fastapi.exceptions import RequestValidationError
 
 from quantum_core.core.responses import APIResponse
+from quantum_core.core.logging import logger
 
 
 class AppException(Exception):
@@ -9,10 +11,12 @@ class AppException(Exception):
     def __init__(
         self,
         message: str,
-        status_code: int = 400
+        status_code: int = 400,
+        errors=None
     ):
         self.message = message
         self.status_code = status_code
+        self.errors = errors or []
 
 
 async def app_exception_handler(
@@ -20,9 +24,39 @@ async def app_exception_handler(
     exc: AppException
 ):
 
+    logger.warning(exc.message)
+
     return APIResponse.error(
         message=exc.message,
+        errors=exc.errors,
         status_code=exc.status_code
+    )
+
+
+async def http_exception_handler(
+    request: Request,
+    exc: HTTPException
+):
+
+    logger.warning(str(exc.detail))
+
+    return APIResponse.error(
+        message=str(exc.detail),
+        status_code=exc.status_code
+    )
+
+
+async def validation_exception_handler(
+    request: Request,
+    exc: RequestValidationError
+):
+
+    logger.warning("Validation failed")
+
+    return APIResponse.error(
+        message="Validation failed",
+        errors=exc.errors(),
+        status_code=422
     )
 
 
@@ -31,10 +65,9 @@ async def generic_exception_handler(
     exc: Exception
 ):
 
-    return JSONResponse(
-        status_code=500,
-        content={
-            "success": False,
-            "message": "Internal server error"
-        }
+    logger.exception(str(exc))
+
+    return APIResponse.error(
+        message="Internal server error",
+        status_code=500
     )
