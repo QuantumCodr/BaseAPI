@@ -13,7 +13,7 @@ from quantum_core.core.exceptions import (
 )
 
 from quantum_core.system.router import router as system_router
-
+from quantum_core.users.router import router as users_router
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -44,4 +44,8 @@ app.add_exception_handler(
 
 app.include_router(
     system_router
+)
+
+app.include_router(
+    users_router
 )

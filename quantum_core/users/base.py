@@ -2,5 +2,5 @@ from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
-# IMPORTANT: force model registration
+# IMPORTANT: import models so Alembic sees them
 from quantum_core.users import models
