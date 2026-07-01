@@ -14,6 +14,7 @@ from quantum_core.core.exceptions import (
 
 from quantum_core.system.router import router as system_router
 from quantum_core.users.router import router as users_router
+from quantum_core.auth.router import router as auth_router
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -48,4 +49,8 @@ app.include_router(
 
 app.include_router(
     users_router
+)
+
+app.include_router(
+    auth_router
 )

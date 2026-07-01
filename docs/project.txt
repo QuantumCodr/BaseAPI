@@ -54,6 +54,8 @@ quantum-core/
 │       ├── validators.py
 │       └── helpers.py
 │
+|── modules/
+|
 ├── tests/
 │   ├── __init__.py
 │   ├── test_auth.py
