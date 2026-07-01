@@ -180,3 +180,29 @@ def verify_email(
     return APIResponse.success(
         message="Email verified"
     )
+
+@router.post(
+    "/resend-verification"
+)
+def resend_verification(
+
+    body:
+    ResendVerificationRequest,
+
+    db:
+    Session
+    =
+    Depends(get_db)
+
+):
+
+    AuthService.resend_verification(
+        db,
+        body.email
+    )
+
+    return APIResponse.success(
+        message=(
+            "Verification email sent"
+        )
+    )

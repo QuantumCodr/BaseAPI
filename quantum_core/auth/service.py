@@ -67,16 +67,37 @@ class AuthService:
                 409
             )
 
-        return (
+        verification_token = str(
+            uuid4()
+        )
+
+        user = (
             UserService
             .create(
                 db,
                 email,
                 AuthService.hash_password(
                     password
-                )
+                ),
+                verification_token=verification_token,
+                is_verified=False
             )
         )
+
+        from quantum_core.utils.email import (
+            send_email
+        )
+
+        send_email(
+            to=user.email,
+            subject="Verify Email",
+            body=(
+                "Your verification token:\n\n"
+                f"{verification_token}"
+            )
+        )
+
+        return user
 
     @staticmethod
     def login(
@@ -226,3 +247,54 @@ class AuthService:
         user.verification_token = None
 
         db.commit()
+
+    @staticmethod
+    def resend_verification(
+        db,
+        email
+    ):
+
+        user = (
+            UserService
+            .get_by_email(
+                db,
+                email
+            )
+        )
+
+        if not user:
+
+            raise AppException(
+                "User not found",
+                404
+            )
+
+        if user.is_verified:
+
+            raise AppException(
+                "Email already verified",
+                400
+            )
+
+        token = str(
+            uuid4()
+        )
+
+        user.verification_token = token
+
+        db.commit()
+
+        from quantum_core.utils.email import (
+            send_email
+        )
+
+        send_email(
+            to=user.email,
+            subject="Verify Email",
+            body=(
+                "Your verification token:\n\n"
+                f"{token}"
+            )
+        )
+
+        return token

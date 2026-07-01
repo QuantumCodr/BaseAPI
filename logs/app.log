@@ -234,3 +234,10 @@ LEVEL: WARNING
 MESSAGE: Not authenticated
 =============================
 
+
+=============================
+TIME: 2026-06-30 21:19:00,642
+LEVEL: WARNING
+MESSAGE: User already exists
+=============================
+

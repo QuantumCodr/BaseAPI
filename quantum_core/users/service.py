@@ -32,14 +32,18 @@ class UserService:
 
     @staticmethod
     def create(
-        db: Session,
-        email: str,
-        password_hash: str
+        db,
+        email,
+        password_hash,
+        verification_token=None,
+        is_verified=False
     ):
 
         user = User(
             email=email,
-            password_hash=password_hash
+            password_hash=password_hash,
+            verification_token=verification_token,
+            is_verified=is_verified
         )
 
         db.add(user)

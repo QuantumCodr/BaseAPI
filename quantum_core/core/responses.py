@@ -1,16 +1,15 @@
-from typing import Any
-
 from fastapi.responses import JSONResponse
+from fastapi.encoders import jsonable_encoder
 
 
 class APIResponse:
 
     @staticmethod
     def success(
-        message: str = "Success",
-        data: Any = None,
-        meta: dict | None = None,
-        status_code: int = 200
+        message="Success",
+        data=None,
+        meta=None,
+        status_code=200
     ):
 
         return JSONResponse(
@@ -18,17 +17,17 @@ class APIResponse:
             content={
                 "success": True,
                 "message": message,
-                "data": data,
+                "data": jsonable_encoder(data),
                 "meta": meta or {}
             }
         )
 
     @staticmethod
     def error(
-        message: str,
-        errors: list | None = None,
-        meta: dict | None = None,
-        status_code: int = 400
+        message,
+        errors=None,
+        meta=None,
+        status_code=400
     ):
 
         return JSONResponse(
@@ -36,7 +35,9 @@ class APIResponse:
             content={
                 "success": False,
                 "message": message,
-                "errors": errors or [],
+                "errors": jsonable_encoder(
+                    errors or []
+                ),
                 "meta": meta or {}
             }
         )
