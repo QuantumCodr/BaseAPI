@@ -2,8 +2,8 @@ from fastapi import Request
 from fastapi import HTTPException
 from fastapi.exceptions import RequestValidationError
 
-from quantum_core.core.responses import APIResponse
-from quantum_core.core.logging import logger
+from app.core.responses import APIResponse
+from app.core.logging import logger
 
 
 class AppException(Exception):

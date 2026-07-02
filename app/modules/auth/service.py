@@ -5,11 +5,11 @@ from uuid import uuid4
 from jose import jwt
 from passlib.context import CryptContext
 
-from quantum_core.core.config import settings
-from quantum_core.core.exceptions import AppException
+from app.core.config import settings
+from app.core.exceptions import AppException
 
-from quantum_core.users.models import User
-from quantum_core.users.service import UserService
+from app.modules.users.models import User
+from app.modules.users.service import UserService
 
 
 pwd = CryptContext(
@@ -84,7 +84,7 @@ class AuthService:
             )
         )
 
-        from quantum_core.utils.email import (
+        from app.shared.email import (
             send_email
         )
 
@@ -284,7 +284,7 @@ class AuthService:
 
         db.commit()
 
-        from quantum_core.utils.email import (
+        from app.shared.email import (
             send_email
         )
 

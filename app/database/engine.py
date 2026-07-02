@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-from quantum_core.core.config import settings
+from app.core.config import settings
 
 # Database engine (core connection to Postgres)
 engine = create_engine(

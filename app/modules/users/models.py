@@ -7,7 +7,7 @@ from sqlalchemy import (
     func
 )
 
-from quantum_core.database.base import Base
+from app.database.base import Base
 
 
 class User(Base):

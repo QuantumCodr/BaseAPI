@@ -1,5 +1,5 @@
 from sqlalchemy.orm import sessionmaker
-from quantum_core.database.engine import engine
+from app.database.engine import engine
 
 # Session factory
 SessionLocal = sessionmaker(

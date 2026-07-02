@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from quantum_core.core.responses import APIResponse
+from app.core.responses import APIResponse
 
 router = APIRouter()
 
@@ -23,7 +23,7 @@ def health():
 # REMOVE BEFORE PRODUCTION
 @router.get("/error")
 def error():
-    from quantum_core.core.exceptions import AppException
+    from app.core.exceptions import AppException
     raise AppException(
         message="Test exception"
     )

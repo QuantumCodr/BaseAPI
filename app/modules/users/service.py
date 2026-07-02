@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from quantum_core.users.models import User
-from quantum_core.core.exceptions import AppException
+from app.modules.users.models import User
+from app.core.exceptions import AppException
 
 
 class UserService:

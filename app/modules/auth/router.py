@@ -3,17 +3,17 @@ from fastapi import Depends
 
 from sqlalchemy.orm import Session
 
-from quantum_core.database.session import get_db
+from app.database.session import get_db
 
-from quantum_core.core.responses import APIResponse
+from app.core.responses import APIResponse
 
-from quantum_core.auth.schemas import *
+from app.modules.auth.schemas import *
 
-from quantum_core.auth.service import (
+from app.modules.auth.service import (
     AuthService
 )
 
-from quantum_core.auth.dependencies import (
+from app.modules.auth.dependencies import (
     get_current_user_id
 )
 

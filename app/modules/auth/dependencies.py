@@ -8,19 +8,19 @@ from jose import jwt
 
 from sqlalchemy.orm import Session
 
-from quantum_core.database.session import (
+from app.database.session import (
     get_db
 )
 
-from quantum_core.core.config import (
+from app.core.config import (
     settings
 )
 
-from quantum_core.core.exceptions import (
+from app.core.exceptions import (
     AppException
 )
 
-from quantum_core.users.models import (
+from app.modules.users.models import (
     User
 )
 

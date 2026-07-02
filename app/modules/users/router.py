@@ -2,15 +2,15 @@ from fastapi import APIRouter
 from fastapi import Depends
 from sqlalchemy.orm import Session
 
-from quantum_core.database.session import get_db
+from app.database.session import get_db
 
-from quantum_core.users.service import UserService
-from quantum_core.users.schemas import (
+from app.modules.users.service import UserService
+from app.modules.users.schemas import (
     UserResponse,
     UserUpdate
 )
 
-from quantum_core.core.responses import APIResponse
+from app.core.responses import APIResponse
 
 
 router = APIRouter(
