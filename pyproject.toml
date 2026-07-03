@@ -1,11 +1,46 @@
 [project]
-
-name = "quantum-core"
-
-version = "1.0.0"
-
-description = "Reusable authentication and user management foundation"
-
+name = "baseapi"
+version = "0.1.0"
+description = "A reusable FastAPI backend framework with authentication, authorization, and modular architecture"
 readme = "README.md"
-
 requires-python = ">=3.11"
+
+license = { text = "Apache-2.0" }
+
+authors = [
+    { name = "Quantum Core Team" }
+]
+
+keywords = [
+    "fastapi",
+    "framework",
+    "backend",
+    "authentication",
+    "authorization",
+    "rbac",
+    "starter",
+    "api"
+]
+
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "sqlalchemy",
+    "psycopg2-binary",
+    "python-jose",
+    "passlib",
+    "pydantic",
+]
+
+[project.urls]
+Homepage = "https://github.com/QuantumCodr/BaseAPI"
+Repository = "https://github.com/QuantumCodr/BaseAPI"
+Documentation = "https://github.com/QuantumCodr/BaseAPI#readme"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

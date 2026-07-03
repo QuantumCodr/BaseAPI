@@ -1,83 +1,151 @@
-# Quantum Core
+# BaseAPI
 
-Reusable FastAPI backend starter framework with authentication and user management built in.
+A reusable, production-ready FastAPI backend foundation that lets you start building your application instead of rebuilding backend infrastructure.
 
-## Overview
-
-Quantum Core is a backend foundation designed to reduce repeated setup work across projects.
-
-It provides:
-
-* Authentication
-* User management
-* Database setup
-* Migration workflow
-* Centralized responses
-* Exception handling
-* Configuration management
-* Modular architecture
-
-The goal is:
-
-Build authentication and user infrastructure once → reuse across projects.
+BaseAPI provides authentication, role-based authorization, database configuration, standardized API responses, logging, and a scalable modular architecture out of the box.
 
 ---
 
-## Features
+# Why BaseAPI?
 
-### Authentication
+Most backend projects begin by recreating the same foundation:
 
-* Register
-* Login
-* JWT access tokens
-* Current user endpoint
-* Logout
-* Refresh token endpoint
-* Forgot password
-* Reset password
+* User authentication
+* JWT tokens
+* Password hashing
+* User management
+* Database configuration
+* Migrations
+* Error handling
+* API responses
+* Logging
+* Role-based permissions
+
+BaseAPI provides these features so you can focus on building your application's business logic.
+
+---
+
+# Features
+
+## Authentication
+
+* User registration
+* User login
+* JWT authentication
+* Password hashing (bcrypt)
+* Current authenticated user
+* Optional authentication
 * Email verification
+* Forgot password
+* Password reset
+* Logout
+* Refresh access token
 
-### User Management
+## Authorization (RBAC)
 
-* User model
-* User profile endpoints
-* Extendable user schema
+* Roles
+* Permissions
+* Many-to-many user-role relationship
+* Many-to-many role-permission relationship
+* Route protection
+* Admin shortcut dependency
+* Verified user dependency
+* Custom role and permission support
 
-### Infrastructure
+## Infrastructure
 
 * PostgreSQL
-* SQLAlchemy
+* SQLAlchemy ORM
 * Alembic migrations
 * Environment configuration
-* Logging
-* Standard API responses
+* Centralized logging
+* Standardized API responses
+* Global exception handling
+* Database seed system
+* Feature-first modular architecture
 
 ---
 
-## Installation
+# Project Structure
 
-Clone project:
+```text
+BaseAPI/
 
-```bash
-git clone https://github.com/QuantumCodr/core-identity-api.git or BaseAPI.git
-cd quantum-core
+├── app/
+│
+│   ├── main.py
+│
+│   ├── core/
+│   │   ├── config.py
+│   │   ├── security.py
+│   │   ├── responses.py
+│   │   ├── exceptions.py
+│   │   ├── logging.py
+│   │   └── registry.py
+│   │
+│   ├── database/
+│   │   ├── session.py
+│   │   ├── base.py
+│   │   └── migrations/
+│   │
+│   ├── shared/
+│   │   ├── email.py
+│   │   ├── helpers.py
+│   │   ├── validators.py
+│   │   ├── constants.py
+│   │   └── pagination.py
+│   │
+│   └── modules/
+│       ├── auth/
+│       ├── users/
+│       └── access/
+│
+├── docs/
+├── logs/
+├── scripts/
+├── tests/
+├── Dockerfile
+├── pyproject.toml
+└── README.md
 ```
 
-Create virtual environment:
+---
+
+# Installation
+
+Clone the repository.
+
+```bash
+git clone https://github.com/QuantumCodr/BaseAPI.git
+```
+
+Enter the project.
+
+```bash
+cd BaseAPI
+```
+
+Create a virtual environment.
 
 ```bash
 python -m venv .venv
 ```
 
-Activate environment.
+Activate it.
 
-Windows:
+Windows
 
 ```bash
 .venv\Scripts\activate
 ```
 
-Install dependencies:
+Linux/macOS
+
+```bash
+source .venv/bin/activate
+```
+
+Install dependencies.
 
 ```bash
 pip install -r requirements.txt
@@ -85,107 +153,159 @@ pip install -r requirements.txt
 
 ---
 
-## Environment Setup
+# Environment Setup
 
-Copy:
+Copy the example environment file.
 
 ```bash
 copy .env.example .env
 ```
 
-Update values inside `.env`.
+Configure your database and application settings inside `.env`.
 
 ---
 
-## Database Setup
+# Database Setup
 
-Run migrations:
+Run migrations.
 
 ```bash
-python -m alembic upgrade head
+alembic upgrade head
 ```
 
 ---
 
-## Run Development Server
+# Seed Default Roles and Permissions
+
+Populate the database with default roles, permissions, and an administrator account.
 
 ```bash
-uvicorn quantum_core.main:app --reload
+python scripts/seed.py
 ```
 
-Open:
+By default, BaseAPI creates:
 
-```plaintext
+### Roles
+
+* admin
+* user
+
+### Permissions
+
+* user.read
+* user.write
+* user.delete
+* role.manage
+* permission.manage
+* admin.access
+
+These defaults are fully customizable by editing `scripts/seed.py`.
+
+---
+
+# Run the Development Server
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Swagger UI
+
+```
 http://127.0.0.1:8000/docs
 ```
 
----
+ReDoc
 
-## Authentication Routes
-
-```plaintext
-POST /auth/register
-POST /auth/login
-POST /auth/logout
-POST /auth/refresh
-POST /auth/forgot-password
-POST /auth/reset-password
-POST /auth/verify-email
-GET  /auth/me
+```
+http://127.0.0.1:8000/redoc
 ```
 
 ---
 
-## Project Structure
+# Authentication Endpoints
 
-```plaintext
-quantum_core/
-
-auth/
-users/
-database/
-core/
-utils/
-tests/
+```
+POST   /auth/register
+POST   /auth/login
+POST   /auth/logout
+POST   /auth/refresh
+POST   /auth/forgot-password
+POST   /auth/reset-password
+POST   /auth/verify-email
+GET    /auth/me
 ```
 
 ---
 
-## Extending Users
+# Protecting Routes
 
-To add additional fields:
+Require an administrator.
 
-1. Update `users/models.py`
-2. Update `users/schemas.py`
-3. Generate migration
-
-```bash
-python -m alembic revision --autogenerate -m "add user fields"
+```python
+@router.get(
+    "/admin",
+    dependencies=[Depends(require_admin())]
+)
 ```
 
-4. Apply migration
+Require a role.
 
-```bash
-python -m alembic upgrade head
+```python
+@router.get(
+    "/reports",
+    dependencies=[Depends(require_role("manager"))]
+)
 ```
 
-Example additions:
+Require a permission.
 
-```plaintext
-name
-phone
-role
-avatar
-bio
+```python
+@router.post(
+    "/products",
+    dependencies=[Depends(require_permission("product.create"))]
+)
 ```
 
-Do not modify historical migrations.
+Require a verified account.
+
+```python
+@router.get(
+    "/profile",
+    dependencies=[Depends(require_verified_user())]
+)
+```
 
 ---
 
-## Testing
+# Customizing Roles
 
-Run:
+BaseAPI does not enforce a fixed permission system.
+
+Developers are free to define any roles or permissions that fit their application.
+
+Example:
+
+```python
+roles = [
+    {
+        "name": "manager",
+        "permissions": [
+            "inventory.read",
+            "inventory.write",
+            "orders.manage"
+        ]
+    }
+]
+```
+
+This makes the framework suitable for e-commerce platforms, school systems, CRMs, healthcare systems, SaaS products, and many other applications.
+
+---
+
+# Testing
+
+Run the test suite.
 
 ```bash
 pytest
@@ -193,26 +313,75 @@ pytest
 
 ---
 
-## Version
+# Documentation
 
-Current version:
+Additional documentation is available in the `docs/` directory.
 
-```plaintext
+Future guides will include:
+
+* Authentication
+* Authorization
+* Database
+* Migrations
+* Testing
+* Deployment
+* CLI
+* Plugin Development
+
+---
+
+# Roadmap
+
+## Completed
+
+* Authentication
+* JWT
+* User Management
+* Role-Based Access Control (RBAC)
+* PostgreSQL
+* SQLAlchemy
+* Alembic
+* Global Exception Handling
+* Standard API Responses
+* Logging
+* Seed System
+
+## Coming Soon
+
+* Package Publishing (PyPI)
+* CLI Project Generator
+* Plugin System
+* Email Providers
+* File Uploads
+* Notification Module
+* Payment Module
+* AI Module
+* Background Jobs
+
+---
+
+# Philosophy
+
+BaseAPI provides reusable infrastructure.
+
+Business logic belongs inside your application's modules.
+
+Keep the framework clean, reusable, and easy to extend.
+
+---
+
+# Version
+
+Current Version
+
+```
 v0.1.0-alpha
 ```
 
 ---
 
-## Philosophy
+# License
 
-Keep the framework simple.
+This project is licensed under the Apache License 2.0.
 
-Business rules belong in modules.
-
-Framework code should stay reusable.
-
----
-
-## License
-
-See LICENSE file.
+See the LICENSE file for details.
