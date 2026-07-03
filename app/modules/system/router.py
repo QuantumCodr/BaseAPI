@@ -6,7 +6,7 @@ router = APIRouter()
 @router.get("/")
 def root():
     return APIResponse.success(
-        message="BseAPI running",
+        message="BaseAPI running",
         data={
             "version": "1.0.0"
         }

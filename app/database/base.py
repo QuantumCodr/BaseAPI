@@ -4,3 +4,4 @@ Base = declarative_base()
 
 # IMPORTANT: force model registration
 from app.modules.users import models
+from app.modules.access import models

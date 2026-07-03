@@ -12,7 +12,7 @@ from app.core.exceptions import (
     generic_exception_handler
 )
 
-from app.system.router import router as system_router
+from app.modules.system.router import router as system_router
 from app.modules.users.router import router as users_router
 from app.modules.auth.router import router as auth_router
 

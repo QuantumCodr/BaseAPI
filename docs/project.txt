@@ -69,7 +69,62 @@ quantum-core/
 ├── alembic.ini
 └── LICENSE
 ```
+Or
 
+BaseAPI/
+
+├── app/
+│
+│   ├── main.py
+│
+│   ├── core/
+│   │   ├── config.py
+│   │   ├── security.py
+│   │   ├── logging.py
+│   │   ├── exceptions.py
+│   │   ├── responses.py
+│   │   └── registry.py
+│   │
+│   ├── database/
+│   │   ├── session.py
+│   │   ├── base.py
+│   │   └── migrations/
+│   │
+│   ├── shared/
+│   │   ├── email.py
+│   │   ├── helpers.py
+│   │   ├── validators.py
+│   │   ├── constants.py
+│   │   └── pagination.py
+│   │
+│   └── modules/
+│
+│       ├── auth/
+│       │   ├── router.py
+│       │   ├── service.py
+│       │   ├── schemas.py
+│       │   ├── dependencies.py
+│       │   └── __init__.py
+│       │
+│       ├── users/
+│       │   ├── router.py
+│       │   ├── service.py
+│       │   ├── schemas.py
+│       │   ├── models.py
+│       │   └── __init__.py
+│       │
+│       └── payments/
+│           ├── router.py
+│           ├── service.py
+│           ├── schemas.py
+│           ├── providers.py
+│           └── __init__.py
+│
+├── tests/
+├── scripts/
+├── Dockerfile
+├── pyproject.toml
+└── README.md
 ---
 
 # Folder Responsibilities (LOCKED)

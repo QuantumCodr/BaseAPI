@@ -8,6 +8,7 @@ from sqlalchemy import (
 )
 
 from app.database.base import Base
+from sqlalchemy.orm import relationship
 
 
 class User(Base):
@@ -22,7 +23,8 @@ class User(Base):
     email = Column(
         String,
         unique=True,
-        nullable=False
+        nullable=False,
+        index=True
     )
 
     password_hash = Column(
@@ -37,15 +39,23 @@ class User(Base):
 
     reset_token = Column(
         String,
-        nullable=True
+        nullable=True,
+        index=True
     )
 
     verification_token = Column(
         String,
-        nullable=True
+        nullable=True,
+        index=True
     )
 
     created_at = Column(
         DateTime(timezone=True),
         server_default=func.now()
     )
+
+    roles = relationship(
+    "Role",
+    secondary="user_roles",
+    back_populates="users"
+)

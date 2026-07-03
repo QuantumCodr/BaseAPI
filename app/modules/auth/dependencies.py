@@ -5,7 +5,6 @@ from fastapi.security import (
 )
 
 from jose import jwt
-
 from sqlalchemy.orm import Session
 
 from app.database.session import (
@@ -105,81 +104,6 @@ def get_current_user(
         )
 
     return user
-
-
-def require_verified_user(
-
-    user=
-    Depends(
-        get_current_user
-    )
-
-):
-
-    if not user.is_verified:
-
-        raise AppException(
-            "Email verification required",
-            403
-        )
-
-    return user  
-
-
-def require_admin(
-
-    user=
-    Depends(
-        get_current_user
-    )
-
-):
-
-    if getattr(
-        user,
-        "role",
-        None
-    ) != "admin":
-
-        raise AppException(
-            "Admin required",
-            403
-        )
-
-    return user
-
-
-def require_role(
-    role
-):
-
-    def checker(
-
-        user=
-        Depends(
-            get_current_user
-        )
-
-    ):
-
-        if (
-            getattr(
-                user,
-                "role",
-                None
-            )
-            !=
-            role
-        ):
-
-            raise AppException(
-                "Insufficient permissions",
-                403
-            )
-
-        return user
-
-    return checker
 
 
 def optional_auth(
