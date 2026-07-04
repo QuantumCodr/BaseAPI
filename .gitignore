@@ -22,3 +22,5 @@ dist/
 *.db
 
 logs/*
+
+*.egg-info/

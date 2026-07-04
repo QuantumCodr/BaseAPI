@@ -9,74 +9,13 @@ No drift. No extra architecture. No unrelated framework ideas.
 # Final Quantum Core Structure (LOCKED)
 
 ```plaintext
-quantum-core/
-│
-├── quantum_core/                     # Source package
-│
-│   ├── __init__.py
-│   ├── main.py                       # FastAPI entry
-│
-│   ├── auth/                         # Authentication
-│   │   ├── __init__.py
-│   │   ├── models.py
-│   │   ├── schemas.py
-│   │   ├── service.py
-│   │   ├── router.py
-│   │   └── dependencies.py
-│   │
-│   ├── users/                        # User management
-│   │   ├── __init__.py
-│   │   ├── models.py
-│   │   ├── schemas.py
-│   │   ├── service.py
-│   │   ├── router.py
-│   │   └── dependencies.py
-│   │
-│   ├── database/                     # DB infrastructure
-│   │   ├── __init__.py
-│   │   ├── base.py
-│   │   ├── session.py
-│   │   └── migrations/
-│   │       └── versions/
-│   │
-│   ├── core/                         # Shared framework internals
-│   │   ├── __init__.py
-│   │   ├── config.py
-│   │   ├── security.py
-│   │   ├── exceptions.py
-│   │   ├── responses.py
-│   │   └── dependencies.py
-|   |   └── logging.py
-│   │
-│   └── utils/                        # Shared reusable helpers
-│       ├── __init__.py
-│       ├── email.py
-│       ├── validators.py
-│       └── helpers.py
-│
-|── modules/
-|
-├── tests/
-│   ├── __init__.py
-│   ├── test_auth.py
-│   └── test_users.py
-│
-├── .env.example
-├── .gitignore
-├── pyproject.toml
-├── README.md
-├── requirements.txt
-├── alembic.ini
-└── LICENSE
-```
-Or
 
 BaseAPI/
 
 ├── app/
-│
+│   │
 │   ├── main.py
-│
+│   │
 │   ├── core/
 │   │   ├── config.py
 │   │   ├── security.py
@@ -86,45 +25,129 @@ BaseAPI/
 │   │   └── registry.py
 │   │
 │   ├── database/
-│   │   ├── session.py
 │   │   ├── base.py
+│   │   ├── session.py
+│   │   ├── engine.py
 │   │   └── migrations/
 │   │
 │   ├── shared/
+│   │   ├── constants.py
 │   │   ├── email.py
 │   │   ├── helpers.py
-│   │   ├── validators.py
-│   │   ├── constants.py
-│   │   └── pagination.py
+│   │   ├── pagination.py
+│   │   └── validators.py
 │   │
 │   └── modules/
-│
+│       │
 │       ├── auth/
+│       │   ├── __init__.py
 │       │   ├── router.py
 │       │   ├── service.py
 │       │   ├── schemas.py
-│       │   ├── dependencies.py
-│       │   └── __init__.py
+│       │   └── dependencies.py
 │       │
 │       ├── users/
+│       │   ├── __init__.py
 │       │   ├── router.py
 │       │   ├── service.py
-│       │   ├── schemas.py
 │       │   ├── models.py
-│       │   └── __init__.py
+│       │   └── schemas.py
+│       │
+│       ├── access/
+│       │   ├── __init__.py
+│       │   ├── models.py
+│       │   ├── service.py
+│       │   ├── schemas.py
+│       │   └── dependencies.py
 │       │
 │       └── payments/
+│           ├── __init__.py
 │           ├── router.py
 │           ├── service.py
 │           ├── schemas.py
-│           ├── providers.py
-│           └── __init__.py
+│           └── providers.py
+│
+├── cli/
+│   │
+│   ├── __init__.py
+│   ├── main.py
+│   │
+│   ├── commands/
+│   │   ├── create.py
+│   │   ├── add.py
+│   │   ├── update.py
+│   │   ├── doctor.py
+│   │   ├── seed.py
+│   │   └── version.py
+│   │
+│   ├── templates/
+│   |    ├── project/
+│   |    └── plugins/
+│   │
+│   └── utils/
+│       ├── copier.py
+│       ├── filesystem.py
+│       ├── manifest.py
+│       ├── hashing.py
+│       └── registry.py
+│
+├── scripts/
+│   └── seed.py
 │
 ├── tests/
-├── scripts/
+│
+├── docs/
+│
+├── logs/
+│
+├── .baseapi/
+│   ├── manifest.json
+│   └── lock.json
+│
+├── .cliignore
+├── .env
+├── .env.example
+├── .gitignore
+├── alembic.ini
 ├── Dockerfile
+├── LICENSE
+├── CONTRIBUTING.md
 ├── pyproject.toml
-└── README.md
+├── README.md
+└── requirements.txt
+
+Or
+
+cli/
+│
+├── __init__.py
+├── main.py
+├── console.py
+├── parser.py
+│
+├── registry/
+│   ├── __init__.py
+│   ├── commands.py
+│   └── plugins.py
+│
+├── commands/
+│   ├── version.py
+│   ├── doctor.py
+│   ├── create.py
+│   ├── add.py
+│   ├── seed.py
+│   └── upgrade.py
+│
+├── templates/
+│   ├── project/
+│   └── plugins/
+│
+└── utils/
+    ├── copier.py
+    ├── filesystem.py
+    ├── hashing.py
+    └── manifest.py
+```
 ---
 
 # Folder Responsibilities (LOCKED)

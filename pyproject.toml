@@ -1,7 +1,7 @@
 [project]
 name = "baseapi"
 version = "0.1.0"
-description = "A reusable FastAPI backend framework with authentication, authorization, and modular architecture"
+description = "Reusable FastAPI backend framework with authentication, authorization, and modular architecture"
 readme = "README.md"
 requires-python = ">=3.11"
 
@@ -28,7 +28,7 @@ dependencies = [
     "sqlalchemy",
     "psycopg2-binary",
     "python-jose",
-    "passlib",
+    "passlib[bcrypt]",
     "pydantic",
 ]
 
@@ -37,10 +37,16 @@ Homepage = "https://github.com/QuantumCodr/BaseAPI"
 Repository = "https://github.com/QuantumCodr/BaseAPI"
 Documentation = "https://github.com/QuantumCodr/BaseAPI#readme"
 
+[project.scripts]
+baseapi = "cli.main:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-v"
 
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+[tool.setuptools]
+packages = ["app", "cli"]
