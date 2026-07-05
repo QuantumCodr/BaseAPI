@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from cli.console import (
     success,
     title,
@@ -9,11 +11,18 @@ from cli.utils.filesystem import (
     ensure_directory_available,
 )
 
-from cli.templates.loader import load_project_template
-from pathlib import Path
+from cli.utils.copier import copy_project
+from cli.utils.renderer import render_directory
+from cli.utils.manifest import create_manifest
+
+from cli import __version__
 
 
 def run_create(request):
+    """
+    BaseAPI project generator entry point
+    """
+
     if not request.arguments:
         error("Project name required.")
         return
@@ -25,16 +34,46 @@ def run_create(request):
     info(f"Project: {project_name}")
 
     try:
-        # 1. Get safe path
+        # =====================================================
+        # 1. Resolve path
+        # =====================================================
         destination = ensure_directory_available(project_name)
 
-        # 3. Generate project from template
-        load_project_template(destination)
+        # =====================================================
+        # 2. Create empty directory
+        # =====================================================
+        destination.mkdir(parents=True, exist_ok=True)
 
-        # 4. Success output
+        # =====================================================
+        # 3. Copy FULL BaseAPI source (NOT templates)
+        # =====================================================
+        source = Path(__file__).resolve().parents[2]  # root project
+
+        copy_project(source, destination)
+
+        # =====================================================
+        # 4. Render placeholders (branding / metadata)
+        # =====================================================
+        context = {
+            "PROJECT_NAME": project_name,
+            "BASEAPI_VERSION": __version__,
+            "PACKAGE_NAME": project_name.replace("-", "_"),
+            "YEAR": "2026",
+        }
+
+        render_directory(destination, context)
+
+        # =====================================================
+        # 5. Create manifest (for upgrade system)
+        # =====================================================
+        create_manifest(destination, __version__)
+
+        # =====================================================
+        # 6. Success output
+        # =====================================================
         success("Project successfully created 🚀")
-        info(f"Location: {destination}")
 
+        info(f"Location: {destination}")
         info("")
         info("Next steps:")
         info(f"cd {project_name}")

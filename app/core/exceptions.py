@@ -19,6 +19,34 @@ class AppException(Exception):
         self.errors = errors or []
 
 
+# =====================================================
+# Framework Exceptions
+# =====================================================
+
+class ModuleError(Exception):
+    """Base exception for BaseAPI module system."""
+
+
+class ModuleLoadError(ModuleError):
+    """Raised when a module cannot be imported."""
+
+
+class ModuleDependencyError(ModuleError):
+    """Raised when module dependencies are invalid."""
+
+
+class ModuleContractError(ModuleError):
+    """Raised when a module violates the BaseAPI contract."""
+
+
+class ModuleRegistrationError(ModuleError):
+    """Raised when register() fails."""
+
+
+# =====================================================
+# HTTP Exception Handlers
+# =====================================================
+
 async def app_exception_handler(
     request: Request,
     exc: AppException

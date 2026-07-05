@@ -2,31 +2,28 @@ import logging
 from pathlib import Path
 
 LOG_DIR = Path("logs")
-LOG_DIR.mkdir(exist_ok=True)
+LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-logger = logging.getLogger("quantum_core")
+logger = logging.getLogger("baseapi")
 
 logger.setLevel(logging.INFO)
-
 logger.propagate = False
 
-file_handler = logging.FileHandler(
-    LOG_DIR / "app.log",
-    encoding="utf-8"
-)
+if not logger.handlers:
 
-formatter = logging.Formatter(
-    """
-=============================
-TIME: %(asctime)s
-LEVEL: %(levelname)s
-MESSAGE: %(message)s
-=============================
-"""
-)
+    formatter = logging.Formatter(
+        "[%(asctime)s] %(levelname)s | %(message)s"
+    )
 
-file_handler.setFormatter(formatter)
+    file_handler = logging.FileHandler(
+        LOG_DIR / "app.log",
+        encoding="utf-8"
+    )
 
-logger.handlers.clear()
+    console_handler = logging.StreamHandler()
 
-logger.addHandler(file_handler)
+    file_handler.setFormatter(formatter)
+    console_handler.setFormatter(formatter)
+
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)

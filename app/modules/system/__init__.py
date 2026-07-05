@@ -1,14 +1,14 @@
 """
-BaseAPI Users Module
+BaseAPI System Module
 """
 
 from .router import router
 
-NAME = "users"
+NAME = "system"
 
 VERSION = "1.0.0"
 
-DESCRIPTION = "User management module"
+DESCRIPTION = "System health and framework information"
 
 ENABLED = True
 

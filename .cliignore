@@ -1,0 +1,57 @@
+# --------------------------------------------------
+# BaseAPI Development Files
+# --------------------------------------------------
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.git/
+.github/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+logs/
+*.log
+
+# Python packaging
+dist/
+build/
+*.egg-info/
+
+# BaseAPI development metadata
+.cliignore
+
+# BaseAPI CLI source
+cli/
+
+# Generated project metadata
+.baseapi/
+
+# Optional
+docs/
+CONTRIBUTING.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# local development noise
+*.sqlite3
+*.db
