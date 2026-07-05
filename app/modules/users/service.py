@@ -110,3 +110,26 @@ class UserService:
         db.delete(user)
 
         db.commit()
+
+    @staticmethod
+    def get_by_verification_token(
+        db: Session,
+        token: str
+    ):
+        return (
+            db.query(User)
+            .filter(User.verification_token == token)
+            .first()
+        )
+
+
+    @staticmethod
+    def get_by_reset_token(
+        db: Session,
+        token: str
+    ):
+        return (
+            db.query(User)
+            .filter(User.reset_token == token)
+            .first()
+        )

@@ -108,3 +108,23 @@ class AuthService:
         )
 
         return token
+        
+    @staticmethod
+    def logout():
+        """
+        JWT logout.
+
+        Since JWT authentication is stateless,
+        logout is handled by the client deleting
+        its stored access token.
+        """
+
+        return True
+
+
+    @staticmethod
+    def refresh(
+        user_id: int
+    ):
+
+        return create_access_token(user_id)

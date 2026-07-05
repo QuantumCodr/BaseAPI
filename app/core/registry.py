@@ -2,7 +2,7 @@
 BaseAPI Module Registry
 
 Responsible for discovering, validating,
-ordering and loading framework modules.
+ordering and registering framework modules.
 """
 
 from pathlib import Path
@@ -44,13 +44,11 @@ def discover_modules():
 
     for item in MODULES_PATH.iterdir():
 
-        if not item.is_dir():
-            continue
-
-        if not (item / "__init__.py").exists():
-            continue
-
-        modules.append(item.name)
+        if (
+            item.is_dir()
+            and (item / "__init__.py").exists()
+        ):
+            modules.append(item.name)
 
     return sorted(modules)
 
@@ -62,7 +60,6 @@ def discover_modules():
 def load_module(module_name):
 
     try:
-
         return import_module(
             f"app.modules.{module_name}"
         )
@@ -97,13 +94,7 @@ def validate_dependencies(modules):
 
     for name, module in modules.items():
 
-        dependencies = getattr(
-            module,
-            "DEPENDENCIES",
-            [],
-        )
-
-        for dependency in dependencies:
+        for dependency in module.DEPENDENCIES:
 
             if dependency not in modules:
 
@@ -126,15 +117,7 @@ def resolve_load_order(modules):
         if name in visited:
             return
 
-        module = modules[name]
-
-        dependencies = getattr(
-            module,
-            "DEPENDENCIES",
-            [],
-        )
-
-        for dependency in dependencies:
+        for dependency in modules[name].DEPENDENCIES:
 
             if dependency in modules:
                 visit(dependency)
@@ -152,12 +135,6 @@ def resolve_load_order(modules):
 # Registration
 # =====================================================
 
-def initialize_module(module):
-
-    if hasattr(module, "initialize"):
-        module.initialize()
-
-
 def register_module(app, module):
 
     try:
@@ -172,83 +149,25 @@ def register_module(app, module):
 
 
 # =====================================================
-# Runtime Lifecycle
-# =====================================================
-
-def startup_modules(app, modules):
-
-    logger.info("========== Module Startup ==========")
-
-    for module in modules.values():
-
-        if not getattr(module, "ENABLED", True):
-            continue
-
-        if hasattr(module, "startup"):
-
-            try:
-
-                module.startup(app)
-
-                logger.info(
-                    "Started %s",
-                    module.NAME,
-                )
-
-            except Exception:
-
-                logger.exception(
-                    "Startup failed: %s",
-                    module.NAME,
-                )
-
-
-def shutdown_modules(app, modules):
-
-    logger.info("========== Module Shutdown ==========")
-
-    for module in modules.values():
-
-        if not getattr(module, "ENABLED", True):
-            continue
-
-        if hasattr(module, "shutdown"):
-
-            try:
-
-                module.shutdown(app)
-
-                logger.info(
-                    "Stopped %s",
-                    module.NAME,
-                )
-
-            except Exception:
-
-                logger.exception(
-                    "Shutdown failed: %s",
-                    module.NAME,
-                )
-
-
-# =====================================================
 # Loader
 # =====================================================
 
 def load_modules(app):
 
-    logger.info("========== BaseAPI Module Loader ==========")
+    logger.info("=" * 35)
+    logger.info("BaseAPI Module Loader")
+    logger.info("=" * 35)
 
-    module_names = discover_modules()
+    names = discover_modules()
 
     logger.info(
-        "Discovered %s modules",
-        len(module_names),
+        "Discovered %s module(s)",
+        len(names),
     )
 
     modules = {}
 
-    for name in module_names:
+    for name in names:
 
         try:
 
@@ -258,15 +177,10 @@ def load_modules(app):
 
             modules[name] = module
 
-            logger.info(
-                "Loaded %s",
-                name,
-            )
-
         except Exception:
 
             logger.exception(
-                "Skipping module '%s'",
+                "Skipping '%s'",
                 name,
             )
 
@@ -274,12 +188,21 @@ def load_modules(app):
 
     order = resolve_load_order(modules)
 
-    logger.info(
-        "Load order: %s",
-        ", ".join(order),
-    )
+    logger.info("")
+    logger.info("Module Load Order")
 
-    ordered_modules = {}
+    for index, name in enumerate(order, start=1):
+
+        logger.info(
+            "%s. %s",
+            index,
+            name,
+        )
+
+    logger.info("")
+    logger.info("Registering Modules")
+
+    loaded = 0
 
     for name in order:
 
@@ -288,25 +211,25 @@ def load_modules(app):
         if not module.ENABLED:
 
             logger.info(
-                "Disabled %s",
+                "SKIP  %s (disabled)",
                 module.NAME,
             )
             continue
 
-        initialize_module(module)
-
         register_module(app, module)
 
-        ordered_modules[name] = module
-
         logger.info(
-            "Registered %s",
+            "OK    %s",
             module.NAME,
         )
 
-    logger.info(
-        "Registered %s modules",
-        len(ordered_modules),
-    )
+        loaded += 1
 
-    return ordered_modules
+    logger.info("")
+    logger.info(
+        "Framework ready (%s modules loaded)",
+        loaded,
+    )
+    logger.info("=" * 35)
+
+    return modules

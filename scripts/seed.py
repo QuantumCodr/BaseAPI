@@ -84,7 +84,7 @@ def run_seed():
 
     try:
         seed_permissions(db)
-        seed_roles(db)
+        seed_roles(db) 
         seed_admin_user(db)
 
         print("✅ Seeding completed successfully")

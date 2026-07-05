@@ -38,31 +38,4 @@ app.add_exception_handler(
     generic_exception_handler,
 )
 
-from contextlib import asynccontextmanager
-
-from app.core.registry import (
-    load_modules,
-    startup_modules,
-    shutdown_modules,
-)
-
-loaded_modules = {}
-
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-
-    startup_modules(app, loaded_modules)
-
-    yield
-
-    shutdown_modules(app, loaded_modules)
-
-
-app = FastAPI(
-    title=settings.APP_NAME,
-    version="v0.1.0-alpha",
-    lifespan=lifespan,
-)
-
-loaded_modules = load_modules(app)
+load_modules(app)

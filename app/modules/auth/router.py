@@ -41,7 +41,8 @@ def register(
         message="Registered",
         data={
             "id": user.id,
-            "email": user.email
+            "email": user.email,
+            "verification_token": user.verification_token
         }
     )
 
@@ -206,3 +207,5 @@ def resend_verification(
             "Verification email sent"
         )
     )
+
+

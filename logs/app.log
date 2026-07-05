@@ -469,3 +469,593 @@ MESSAGE: Loaded 4 modules successfully
 [2026-07-04 23:25:25,914] INFO | Registered access
 [2026-07-04 23:25:25,915] INFO | Registered system
 [2026-07-04 23:25:25,915] INFO | Registered 4 modules
+[2026-07-04 23:26:20,200] INFO | ========== BaseAPI Module Loader ==========
+[2026-07-04 23:26:20,201] INFO | Discovered 4 modules
+[2026-07-04 23:26:20,203] INFO | Loaded access
+[2026-07-04 23:26:20,747] INFO | Loaded auth
+[2026-07-04 23:26:20,750] INFO | Loaded system
+[2026-07-04 23:26:20,750] INFO | Loaded users
+[2026-07-04 23:26:20,750] INFO | Load order: auth, users, access, system
+[2026-07-04 23:26:20,750] INFO | Registered auth
+[2026-07-04 23:26:20,751] INFO | Registered users
+[2026-07-04 23:26:20,751] INFO | Registered access
+[2026-07-04 23:26:20,751] INFO | Registered system
+[2026-07-04 23:26:20,751] INFO | Registered 4 modules
+[2026-07-04 23:26:20,752] INFO | ========== Module Startup ==========
+[2026-07-04 23:36:46,147] INFO | ========== Module Shutdown ==========
+[2026-07-04 23:37:18,973] INFO | ============================================================
+[2026-07-04 23:37:18,973] INFO | BaseAPI Module Loader
+[2026-07-04 23:37:18,974] INFO | ============================================================
+[2026-07-04 23:37:18,975] INFO | Discovered 4 module(s)
+[2026-07-04 23:37:19,661] INFO | 
+[2026-07-04 23:37:19,661] INFO | Module Load Order
+[2026-07-04 23:37:19,661] INFO | 1. auth
+[2026-07-04 23:37:19,662] INFO | 2. users
+[2026-07-04 23:37:19,662] INFO | 3. access
+[2026-07-04 23:37:19,662] INFO | 4. system
+[2026-07-04 23:37:19,662] INFO | 
+[2026-07-04 23:37:19,663] INFO | Registering Modules
+[2026-07-04 23:37:19,663] INFO | OK    auth
+[2026-07-04 23:37:19,663] INFO | OK    users
+[2026-07-04 23:37:19,663] INFO | OK    access
+[2026-07-04 23:37:19,664] INFO | OK    system
+[2026-07-04 23:37:19,664] INFO | 
+[2026-07-04 23:37:19,664] INFO | Framework ready (4 modules loaded)
+[2026-07-04 23:37:19,664] INFO | ============================================================
+[2026-07-04 23:39:13,375] INFO | ==============================
+[2026-07-04 23:39:13,376] INFO | BaseAPI Module Loader
+[2026-07-04 23:39:13,376] INFO | ==============================
+[2026-07-04 23:39:13,377] INFO | Discovered 4 module(s)
+[2026-07-04 23:39:14,002] INFO | 
+[2026-07-04 23:39:14,002] INFO | Module Load Order
+[2026-07-04 23:39:14,003] INFO | 1. auth
+[2026-07-04 23:39:14,003] INFO | 2. users
+[2026-07-04 23:39:14,003] INFO | 3. access
+[2026-07-04 23:39:14,003] INFO | 4. system
+[2026-07-04 23:39:14,003] INFO | 
+[2026-07-04 23:39:14,004] INFO | Registering Modules
+[2026-07-04 23:39:14,004] INFO | OK    auth
+[2026-07-04 23:39:14,004] INFO | OK    users
+[2026-07-04 23:39:14,004] INFO | OK    access
+[2026-07-04 23:39:14,005] INFO | OK    system
+[2026-07-04 23:39:14,005] INFO | 
+[2026-07-04 23:39:14,005] INFO | Framework ready (4 modules loaded)
+[2026-07-04 23:39:14,005] INFO | ============================================================
+[2026-07-04 23:39:36,871] INFO | ==============================
+[2026-07-04 23:39:36,872] INFO | BaseAPI Module Loader
+[2026-07-04 23:39:36,872] INFO | ==============================
+[2026-07-04 23:39:36,873] INFO | Discovered 4 module(s)
+[2026-07-04 23:39:37,459] INFO | 
+[2026-07-04 23:39:37,459] INFO | Module Load Order
+[2026-07-04 23:39:37,459] INFO | 1. auth
+[2026-07-04 23:39:37,459] INFO | 2. users
+[2026-07-04 23:39:37,459] INFO | 3. access
+[2026-07-04 23:39:37,460] INFO | 4. system
+[2026-07-04 23:39:37,460] INFO | 
+[2026-07-04 23:39:37,460] INFO | Registering Modules
+[2026-07-04 23:39:37,460] INFO | OK    auth
+[2026-07-04 23:39:37,461] INFO | OK    users
+[2026-07-04 23:39:37,461] INFO | OK    access
+[2026-07-04 23:39:37,461] INFO | OK    system
+[2026-07-04 23:39:37,461] INFO | 
+[2026-07-04 23:39:37,461] INFO | Framework ready (4 modules loaded)
+[2026-07-04 23:39:37,462] INFO | ==============================
+[2026-07-04 23:39:58,723] INFO | ========================================
+[2026-07-04 23:39:58,724] INFO | BaseAPI Module Loader
+[2026-07-04 23:39:58,724] INFO | ========================================
+[2026-07-04 23:39:58,725] INFO | Discovered 4 module(s)
+[2026-07-04 23:39:59,322] INFO | 
+[2026-07-04 23:39:59,322] INFO | Module Load Order
+[2026-07-04 23:39:59,322] INFO | 1. auth
+[2026-07-04 23:39:59,322] INFO | 2. users
+[2026-07-04 23:39:59,322] INFO | 3. access
+[2026-07-04 23:39:59,323] INFO | 4. system
+[2026-07-04 23:39:59,323] INFO | 
+[2026-07-04 23:39:59,323] INFO | Registering Modules
+[2026-07-04 23:39:59,323] INFO | OK    auth
+[2026-07-04 23:39:59,324] INFO | OK    users
+[2026-07-04 23:39:59,324] INFO | OK    access
+[2026-07-04 23:39:59,324] INFO | OK    system
+[2026-07-04 23:39:59,324] INFO | 
+[2026-07-04 23:39:59,325] INFO | Framework ready (4 modules loaded)
+[2026-07-04 23:39:59,325] INFO | ========================================
+[2026-07-04 23:40:25,210] INFO | ===================================
+[2026-07-04 23:40:25,211] INFO | BaseAPI Module Loader
+[2026-07-04 23:40:25,211] INFO | ===================================
+[2026-07-04 23:40:25,212] INFO | Discovered 4 module(s)
+[2026-07-04 23:40:25,802] INFO | 
+[2026-07-04 23:40:25,803] INFO | Module Load Order
+[2026-07-04 23:40:25,803] INFO | 1. auth
+[2026-07-04 23:40:25,803] INFO | 2. users
+[2026-07-04 23:40:25,803] INFO | 3. access
+[2026-07-04 23:40:25,803] INFO | 4. system
+[2026-07-04 23:40:25,804] INFO | 
+[2026-07-04 23:40:25,804] INFO | Registering Modules
+[2026-07-04 23:40:25,805] INFO | OK    auth
+[2026-07-04 23:40:25,805] INFO | OK    users
+[2026-07-04 23:40:25,805] INFO | OK    access
+[2026-07-04 23:40:25,806] INFO | OK    system
+[2026-07-04 23:40:25,806] INFO | 
+[2026-07-04 23:40:25,806] INFO | Framework ready (4 modules loaded)
+[2026-07-04 23:40:25,806] INFO | ===================================
+[2026-07-05 00:14:55,607] INFO | ===================================
+[2026-07-05 00:14:55,608] INFO | BaseAPI Module Loader
+[2026-07-05 00:14:55,608] INFO | ===================================
+[2026-07-05 00:14:55,609] INFO | Discovered 4 module(s)
+[2026-07-05 00:14:56,428] INFO | 
+[2026-07-05 00:14:56,428] INFO | Module Load Order
+[2026-07-05 00:14:56,428] INFO | 1. auth
+[2026-07-05 00:14:56,428] INFO | 2. users
+[2026-07-05 00:14:56,429] INFO | 3. access
+[2026-07-05 00:14:56,429] INFO | 4. system
+[2026-07-05 00:14:56,429] INFO | 
+[2026-07-05 00:14:56,429] INFO | Registering Modules
+[2026-07-05 00:14:56,430] INFO | OK    auth
+[2026-07-05 00:14:56,430] INFO | OK    users
+[2026-07-05 00:14:56,430] INFO | OK    access
+[2026-07-05 00:14:56,431] INFO | OK    system
+[2026-07-05 00:14:56,431] INFO | 
+[2026-07-05 00:14:56,431] INFO | Framework ready (4 modules loaded)
+[2026-07-05 00:14:56,431] INFO | ===================================
+[2026-07-05 03:59:48,304] INFO | ===================================
+[2026-07-05 03:59:48,305] INFO | BaseAPI Module Loader
+[2026-07-05 03:59:48,305] INFO | ===================================
+[2026-07-05 03:59:48,306] INFO | Discovered 4 module(s)
+[2026-07-05 03:59:49,007] INFO | 
+[2026-07-05 03:59:49,007] INFO | Module Load Order
+[2026-07-05 03:59:49,007] INFO | 1. auth
+[2026-07-05 03:59:49,007] INFO | 2. users
+[2026-07-05 03:59:49,007] INFO | 3. access
+[2026-07-05 03:59:49,008] INFO | 4. system
+[2026-07-05 03:59:49,008] INFO | 
+[2026-07-05 03:59:49,008] INFO | Registering Modules
+[2026-07-05 03:59:49,008] INFO | OK    auth
+[2026-07-05 03:59:49,008] INFO | SKIP  users (disabled)
+[2026-07-05 03:59:49,008] INFO | OK    access
+[2026-07-05 03:59:49,009] INFO | OK    system
+[2026-07-05 03:59:49,009] INFO | 
+[2026-07-05 03:59:49,009] INFO | Framework ready (3 modules loaded)
+[2026-07-05 03:59:49,009] INFO | ===================================
+[2026-07-05 03:59:51,083] INFO | ===================================
+[2026-07-05 03:59:51,083] INFO | BaseAPI Module Loader
+[2026-07-05 03:59:51,084] INFO | ===================================
+[2026-07-05 03:59:51,084] INFO | Discovered 4 module(s)
+[2026-07-05 03:59:51,734] INFO | 
+[2026-07-05 03:59:51,734] INFO | Module Load Order
+[2026-07-05 03:59:51,734] INFO | 1. auth
+[2026-07-05 03:59:51,734] INFO | 2. users
+[2026-07-05 03:59:51,735] INFO | 3. access
+[2026-07-05 03:59:51,735] INFO | 4. system
+[2026-07-05 03:59:51,735] INFO | 
+[2026-07-05 03:59:51,735] INFO | Registering Modules
+[2026-07-05 03:59:51,736] INFO | OK    auth
+[2026-07-05 03:59:51,736] INFO | SKIP  users (disabled)
+[2026-07-05 03:59:51,736] INFO | OK    access
+[2026-07-05 03:59:51,736] INFO | OK    system
+[2026-07-05 03:59:51,737] INFO | 
+[2026-07-05 03:59:51,737] INFO | Framework ready (3 modules loaded)
+[2026-07-05 03:59:51,737] INFO | ===================================
+[2026-07-05 04:00:24,327] INFO | ===================================
+[2026-07-05 04:00:24,327] INFO | BaseAPI Module Loader
+[2026-07-05 04:00:24,327] INFO | ===================================
+[2026-07-05 04:00:24,328] INFO | Discovered 4 module(s)
+[2026-07-05 04:00:24,852] INFO | 
+[2026-07-05 04:00:24,852] INFO | Module Load Order
+[2026-07-05 04:00:24,852] INFO | 1. auth
+[2026-07-05 04:00:24,853] INFO | 2. users
+[2026-07-05 04:00:24,853] INFO | 3. access
+[2026-07-05 04:00:24,853] INFO | 4. system
+[2026-07-05 04:00:24,853] INFO | 
+[2026-07-05 04:00:24,853] INFO | Registering Modules
+[2026-07-05 04:00:24,853] INFO | SKIP  auth (disabled)
+[2026-07-05 04:00:24,854] INFO | SKIP  users (disabled)
+[2026-07-05 04:00:24,854] INFO | OK    access
+[2026-07-05 04:00:24,854] INFO | OK    system
+[2026-07-05 04:00:24,854] INFO | 
+[2026-07-05 04:00:24,855] INFO | Framework ready (2 modules loaded)
+[2026-07-05 04:00:24,855] INFO | ===================================
+[2026-07-05 04:00:45,626] INFO | ===================================
+[2026-07-05 04:00:45,627] INFO | BaseAPI Module Loader
+[2026-07-05 04:00:45,627] INFO | ===================================
+[2026-07-05 04:00:45,628] INFO | Discovered 4 module(s)
+[2026-07-05 04:00:46,560] INFO | 
+[2026-07-05 04:00:46,561] INFO | Module Load Order
+[2026-07-05 04:00:46,561] INFO | 1. auth
+[2026-07-05 04:00:46,561] INFO | 2. users
+[2026-07-05 04:00:46,561] INFO | 3. access
+[2026-07-05 04:00:46,562] INFO | 4. system
+[2026-07-05 04:00:46,562] INFO | 
+[2026-07-05 04:00:46,562] INFO | Registering Modules
+[2026-07-05 04:00:46,562] INFO | OK    auth
+[2026-07-05 04:00:46,563] INFO | SKIP  users (disabled)
+[2026-07-05 04:00:46,563] INFO | OK    access
+[2026-07-05 04:00:46,564] INFO | OK    system
+[2026-07-05 04:00:46,564] INFO | 
+[2026-07-05 04:00:46,564] INFO | Framework ready (3 modules loaded)
+[2026-07-05 04:00:46,564] INFO | ===================================
+[2026-07-05 04:00:52,276] INFO | ===================================
+[2026-07-05 04:00:52,277] INFO | BaseAPI Module Loader
+[2026-07-05 04:00:52,277] INFO | ===================================
+[2026-07-05 04:00:52,278] INFO | Discovered 4 module(s)
+[2026-07-05 04:00:52,949] INFO | 
+[2026-07-05 04:00:52,949] INFO | Module Load Order
+[2026-07-05 04:00:52,949] INFO | 1. auth
+[2026-07-05 04:00:52,950] INFO | 2. users
+[2026-07-05 04:00:52,950] INFO | 3. access
+[2026-07-05 04:00:52,950] INFO | 4. system
+[2026-07-05 04:00:52,950] INFO | 
+[2026-07-05 04:00:52,950] INFO | Registering Modules
+[2026-07-05 04:00:52,951] INFO | OK    auth
+[2026-07-05 04:00:52,951] INFO | OK    users
+[2026-07-05 04:00:52,951] INFO | OK    access
+[2026-07-05 04:00:52,951] INFO | OK    system
+[2026-07-05 04:00:52,952] INFO | 
+[2026-07-05 04:00:52,952] INFO | Framework ready (4 modules loaded)
+[2026-07-05 04:00:52,952] INFO | ===================================
+[2026-07-05 04:43:47,350] ERROR | type object 'UserService' has no attribute 'get_by_verification_token'
+Traceback (most recent call last):
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 2531, in app
+    await route.handle(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "C:\Workspace\quantum-core\app\modules\auth\router.py", line 175, in verify_email
+    AuthService.verify_email(
+    ~~~~~~~~~~~~~~~~~~~~~~~~^
+        db,
+        ^^^
+        body.token
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Workspace\quantum-core\app\modules\auth\service.py", line 80, in verify_email
+    user = UserService.get_by_verification_token(db, token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'UserService' has no attribute 'get_by_verification_token'
+[2026-07-05 04:44:56,439] ERROR | type object 'UserService' has no attribute 'get_by_verification_token'
+Traceback (most recent call last):
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 2531, in app
+    await route.handle(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "C:\Workspace\quantum-core\app\modules\auth\router.py", line 175, in verify_email
+    AuthService.verify_email(
+    ~~~~~~~~~~~~~~~~~~~~~~~~^
+        db,
+        ^^^
+        body.token
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Workspace\quantum-core\app\modules\auth\service.py", line 80, in verify_email
+    user = UserService.get_by_verification_token(db, token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'UserService' has no attribute 'get_by_verification_token'
+[2026-07-05 04:57:35,224] INFO | ===================================
+[2026-07-05 04:57:35,233] INFO | BaseAPI Module Loader
+[2026-07-05 04:57:35,234] INFO | ===================================
+[2026-07-05 04:57:35,234] INFO | Discovered 4 module(s)
+[2026-07-05 04:57:36,445] INFO | 
+[2026-07-05 04:57:36,445] INFO | Module Load Order
+[2026-07-05 04:57:36,446] INFO | 1. auth
+[2026-07-05 04:57:36,446] INFO | 2. users
+[2026-07-05 04:57:36,446] INFO | 3. access
+[2026-07-05 04:57:36,446] INFO | 4. system
+[2026-07-05 04:57:36,447] INFO | 
+[2026-07-05 04:57:36,447] INFO | Registering Modules
+[2026-07-05 04:57:36,447] INFO | OK    auth
+[2026-07-05 04:57:36,448] INFO | OK    users
+[2026-07-05 04:57:36,448] INFO | OK    access
+[2026-07-05 04:57:36,449] INFO | OK    system
+[2026-07-05 04:57:36,449] INFO | 
+[2026-07-05 04:57:36,449] INFO | Framework ready (4 modules loaded)
+[2026-07-05 04:57:36,449] INFO | ===================================
+[2026-07-05 04:57:38,765] INFO | ===================================
+[2026-07-05 04:57:38,766] INFO | BaseAPI Module Loader
+[2026-07-05 04:57:38,766] INFO | ===================================
+[2026-07-05 04:57:38,766] INFO | Discovered 4 module(s)
+[2026-07-05 04:57:39,733] INFO | 
+[2026-07-05 04:57:39,733] INFO | Module Load Order
+[2026-07-05 04:57:39,734] INFO | 1. auth
+[2026-07-05 04:57:39,734] INFO | 2. users
+[2026-07-05 04:57:39,736] INFO | 3. access
+[2026-07-05 04:57:39,736] INFO | 4. system
+[2026-07-05 04:57:39,737] INFO | 
+[2026-07-05 04:57:39,738] INFO | Registering Modules
+[2026-07-05 04:57:39,743] INFO | OK    auth
+[2026-07-05 04:57:39,744] INFO | OK    users
+[2026-07-05 04:57:39,744] INFO | OK    access
+[2026-07-05 04:57:39,744] INFO | OK    system
+[2026-07-05 04:57:39,745] INFO | 
+[2026-07-05 04:57:39,745] INFO | Framework ready (4 modules loaded)
+[2026-07-05 04:57:39,745] INFO | ===================================
+[2026-07-05 04:58:19,954] ERROR | type object 'UserService' has no attribute 'get_by_verification_token'
+Traceback (most recent call last):
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 2531, in app
+    await route.handle(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "C:\Workspace\quantum-core\app\modules\auth\router.py", line 175, in verify_email
+    AuthService.verify_email(
+    ~~~~~~~~~~~~~~~~~~~~~~~~^
+        db,
+        ^^^
+        body.token
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Workspace\quantum-core\app\modules\auth\service.py", line 82, in verify_email
+    user = UserService.get_by_verification_token(db, token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'UserService' has no attribute 'get_by_verification_token'
+[2026-07-05 05:03:32,343] INFO | ===================================
+[2026-07-05 05:03:32,344] INFO | BaseAPI Module Loader
+[2026-07-05 05:03:32,344] INFO | ===================================
+[2026-07-05 05:03:32,345] INFO | Discovered 4 module(s)
+[2026-07-05 05:03:33,268] INFO | 
+[2026-07-05 05:03:33,269] INFO | Module Load Order
+[2026-07-05 05:03:33,269] INFO | 1. auth
+[2026-07-05 05:03:33,270] INFO | 2. users
+[2026-07-05 05:03:33,271] INFO | 3. access
+[2026-07-05 05:03:33,271] INFO | 4. system
+[2026-07-05 05:03:33,271] INFO | 
+[2026-07-05 05:03:33,272] INFO | Registering Modules
+[2026-07-05 05:03:33,272] INFO | OK    auth
+[2026-07-05 05:03:33,273] INFO | OK    users
+[2026-07-05 05:03:33,273] INFO | OK    access
+[2026-07-05 05:03:33,274] INFO | OK    system
+[2026-07-05 05:03:33,274] INFO | 
+[2026-07-05 05:03:33,275] INFO | Framework ready (4 modules loaded)
+[2026-07-05 05:03:33,275] INFO | ===================================
+[2026-07-05 05:03:37,236] INFO | ===================================
+[2026-07-05 05:03:37,236] INFO | BaseAPI Module Loader
+[2026-07-05 05:03:37,237] INFO | ===================================
+[2026-07-05 05:03:37,237] INFO | Discovered 4 module(s)
+[2026-07-05 05:03:37,784] INFO | 
+[2026-07-05 05:03:37,784] INFO | Module Load Order
+[2026-07-05 05:03:37,785] INFO | 1. auth
+[2026-07-05 05:03:37,785] INFO | 2. users
+[2026-07-05 05:03:37,785] INFO | 3. access
+[2026-07-05 05:03:37,785] INFO | 4. system
+[2026-07-05 05:03:37,785] INFO | 
+[2026-07-05 05:03:37,786] INFO | Registering Modules
+[2026-07-05 05:03:37,786] INFO | OK    auth
+[2026-07-05 05:03:37,786] INFO | OK    users
+[2026-07-05 05:03:37,786] INFO | OK    access
+[2026-07-05 05:03:37,787] INFO | OK    system
+[2026-07-05 05:03:37,787] INFO | 
+[2026-07-05 05:03:37,787] INFO | Framework ready (4 modules loaded)
+[2026-07-05 05:03:37,787] INFO | ===================================
+[2026-07-05 05:03:57,912] WARNING | Invalid token
+[2026-07-05 05:05:28,539] ERROR | type object 'AuthService' has no attribute 'refresh'
+Traceback (most recent call last):
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 2531, in app
+    await route.handle(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 2586, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\fastapi\routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Workspace\quantum-core\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "C:\Workspace\quantum-core\app\modules\auth\router.py", line 100, in refresh
+    .refresh(
+     ^^^^^^^
+AttributeError: type object 'AuthService' has no attribute 'refresh'
+[2026-07-05 05:06:11,924] INFO | ===================================
+[2026-07-05 05:06:11,925] INFO | BaseAPI Module Loader
+[2026-07-05 05:06:11,927] INFO | ===================================
+[2026-07-05 05:06:11,929] INFO | Discovered 4 module(s)
+[2026-07-05 05:06:13,150] INFO | 
+[2026-07-05 05:06:13,152] INFO | Module Load Order
+[2026-07-05 05:06:13,153] INFO | 1. auth
+[2026-07-05 05:06:13,154] INFO | 2. users
+[2026-07-05 05:06:13,155] INFO | 3. access
+[2026-07-05 05:06:13,156] INFO | 4. system
+[2026-07-05 05:06:13,156] INFO | 
+[2026-07-05 05:06:13,157] INFO | Registering Modules
+[2026-07-05 05:06:13,157] INFO | OK    auth
+[2026-07-05 05:06:13,158] INFO | OK    users
+[2026-07-05 05:06:13,158] INFO | OK    access
+[2026-07-05 05:06:13,159] INFO | OK    system
+[2026-07-05 05:06:13,159] INFO | 
+[2026-07-05 05:06:13,159] INFO | Framework ready (4 modules loaded)
+[2026-07-05 05:06:13,159] INFO | ===================================
