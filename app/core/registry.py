@@ -9,6 +9,7 @@ from pathlib import Path
 from importlib import import_module
 
 from app.core.logging import logger
+from app.core.logging import logger, phase, section, log
 
 from app.core.exceptions import (
     ModuleLoadError,
@@ -154,22 +155,31 @@ def register_module(app, module):
 
 def load_modules(app):
 
-    logger.info("=" * 35)
-    logger.info("BaseAPI Module Loader")
-    logger.info("=" * 35)
+    # ============================================================
+    phase("BASEAPI MODULE LOADER INITIALIZATION")
+    # ============================================================
+
+    logger.info("BaseAPI module system starting up...")
+
+    # ============================================================
+    section("DISCOVERY PHASE")
+    # ============================================================
 
     names = discover_modules()
 
-    logger.info(
-        "Discovered %s module(s)",
-        len(names),
-    )
+    logger.info("Discovered %s module(s)", len(names))
+    logger.info("Modules found: %s", ", ".join(names) if names else "None")
 
     modules = {}
+
+    # ============================================================
+    section("VALIDATION + LOADING PHASE")
+    # ============================================================
 
     for name in names:
 
         try:
+            logger.info("Loading module: %s", name)
 
             module = load_module(name)
 
@@ -178,29 +188,26 @@ def load_modules(app):
             modules[name] = module
 
         except Exception:
+            logger.exception("Skipping '%s' due to load/validation error", name)
 
-            logger.exception(
-                "Skipping '%s'",
-                name,
-            )
+    # ============================================================
+    section("DEPENDENCY RESOLUTION PHASE")
+    # ============================================================
 
     validate_dependencies(modules)
 
     order = resolve_load_order(modules)
 
-    logger.info("")
-    logger.info("Module Load Order")
+    logger.info("Load order resolved:")
 
     for index, name in enumerate(order, start=1):
+        logger.info("%s. %s", index, name)
 
-        logger.info(
-            "%s. %s",
-            index,
-            name,
-        )
+    # ============================================================
+    section("REGISTRATION PHASE")
+    # ============================================================
 
-    logger.info("")
-    logger.info("Registering Modules")
+    logger.info("Registering modules into application context")
 
     loaded = 0
 
@@ -210,26 +217,21 @@ def load_modules(app):
 
         if not module.ENABLED:
 
-            logger.info(
-                "SKIP  %s (disabled)",
-                module.NAME,
-            )
+            logger.info("SKIP  %s (disabled)", module.NAME)
             continue
 
         register_module(app, module)
 
-        logger.info(
-            "OK    %s",
-            module.NAME,
-        )
+        logger.info("OK    %s → registered", module.NAME)
 
         loaded += 1
 
-    logger.info("")
-    logger.info(
-        "Framework ready (%s modules loaded)",
-        loaded,
-    )
-    logger.info("=" * 35)
+    # ============================================================
+    section("FINAL STATUS")
+    # ============================================================
+
+    logger.info("Framework ready (%s modules loaded successfully)", loaded)
+
+    logger.info("=" * 60)
 
     return modules
