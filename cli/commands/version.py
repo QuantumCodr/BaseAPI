@@ -1,9 +1,35 @@
-from cli import __version__
-from cli.console import info
+from importlib.metadata import version
+from pathlib import Path
+import platform
+import sys
 
 
-def run_version(request):
+def register(subparsers):
+    parser = subparsers.add_parser(
+        "version",
+        help="Show BaseAPI version information",
+    )
 
-    info(
-        f"BaseAPI CLI v{__version__}"
+    parser.set_defaults(handler=run)
+
+
+def run(args):
+    baseapi_version = version("baseapi")
+
+    print(
+f"""
+==========================================
+              BaseAPI
+==========================================
+
+Version     : {baseapi_version}
+
+Python      : {platform.python_version()}
+Platform    : {platform.system()}
+Location    : {Path.cwd()}
+
+Status      : Ready
+
+==========================================
+"""
     )

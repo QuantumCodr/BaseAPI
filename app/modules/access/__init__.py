@@ -11,7 +11,7 @@ DEPENDENCIES = [
     "users",
 ]
 
-AUTHOR = "Quantum Core"
+AUTHOR = "GLEEKAN DAVID WILLIAMS"
 
 LICENSE = "Apache-2.0"
 

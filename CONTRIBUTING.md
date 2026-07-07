@@ -2,7 +2,7 @@
 
 Thank you for contributing.
 
-The objective is to keep Quantum Core understandable, reusable, and easy to extend.
+The objective is to keep BaseAPI understandable, reusable, and easy to extend.
 
 ---
 

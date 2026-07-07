@@ -1,12 +1,12 @@
 Agreed. One last reset and we lock it.
 
-This time we keep only what supports **Quantum Core’s mission**:
+This time we keep only what supports **BaseAPI’s mission**:
 
 > Build authentication + user management once → reuse across projects.
 
 No drift. No extra architecture. No unrelated framework ideas.
 
-# Final Quantum Core Structure (LOCKED)
+# Final BaseAPI Structure (LOCKED)
 
 ```plaintext
 
@@ -256,7 +256,7 @@ payments/
 bookings/
 ```
 
-Quantum Core itself stays unchanged.
+BaseAPIe itself stays unchanged.
 
 ---
 

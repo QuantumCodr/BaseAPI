@@ -60,7 +60,7 @@ VERSION = "1.0.0"
 
 DESCRIPTION = "Authentication module"
 
-AUTHOR = "Quantum Core"
+AUTHOR = "GLEEKAN DAVID WILLIAMS"
 
 LICENSE = "Apache-2.0"
 
