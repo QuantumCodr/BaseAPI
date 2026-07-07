@@ -11,7 +11,7 @@ No drift. No extra architecture. No unrelated framework ideas.
 ```plaintext
 
 BaseAPI/
-
+│
 ├── app/
 │   │
 │   ├── main.py
@@ -49,104 +49,84 @@ BaseAPI/
 │       ├── users/
 │       │   ├── __init__.py
 │       │   ├── router.py
-│       │   ├── service.py
 │       │   ├── models.py
-│       │   └── schemas.py
+│       │   ├── router.py
+│       │   ├── schemas.py
+│       │   └── service.py
 │       │
 │       ├── access/
 │       │   ├── __init__.py
+│       │   ├── dependencies.py
 │       │   ├── models.py
-│       │   ├── service.py
 │       │   ├── schemas.py
-│       │   └── dependencies.py
+│       │   └── service.py
 │       │
 │       └── payments/
 │           ├── __init__.py
+│           ├── providers.py
 │           ├── router.py
-│           ├── service.py
 │           ├── schemas.py
-│           └── providers.py
+│           └── service.py
 │
 ├── cli/
 │   │
 │   ├── __init__.py
 │   ├── main.py
+│   ├── parser.py
+│   ├── console.py
 │   │
 │   ├── commands/
-│   │   ├── create.py
-│   │   ├── add.py
-│   │   ├── update.py
 │   │   ├── doctor.py
-│   │   ├── seed.py  
+│   │   ├── info.py
+│   │   ├── module.py
+│   │   ├── new.py
+│   │   ├── seed.py
+│   │   ├── upgrade.py
 │   │   └── version.py
 │   │
+│   ├── generators/
+│   │   ├── module.py
+│   │   └── project.py
+│   │
+│   ├── services/
+│   │   ├── filesystem.py
+│   │   ├── manifest.py
+│   │   ├── project.py
+│   │   ├── updater.py
+│   │   └── validator.py
+│   │
 │   ├── templates/
-│   |    ├── project/
-│   |    └── plugins/
+│   │   ├── misc/
+│   │   ├── modules/
+│   │   └── project/
 │   │
 │   └── utils/
-│       ├── copier.py
-│       ├── filesystem.py
-│       ├── manifest.py
 │       ├── hashing.py
-│       └── registry.py
+│       └── paths.py
+│
+├── docs/
+│
+├── logs/
 │
 ├── scripts/
 │   └── seed.py
 │
 ├── tests/
 │
-├── docs/
-│
-├── logs/
-│
 ├── .baseapi/
-│   ├── manifest.json
-│   └── lock.json
+│   └── project.json
 │
 ├── .cliignore
 ├── .env
 ├── .env.example
 ├── .gitignore
 ├── alembic.ini
+├── CONTRIBUTING.md
 ├── Dockerfile
 ├── LICENSE
-├── CONTRIBUTING.md
 ├── pyproject.toml
 ├── README.md
 └── requirements.txt
-
-Or
-
-cli/
-│
-├── __init__.py
-├── main.py
-├── console.py
-├── parser.py
-│
-├── registry/
-│   ├── __init__.py
-│   ├── commands.py
-│   └── plugins.py
-│
-├── commands/
-│   ├── version.py
-│   ├── doctor.py
-│   ├── create.py
-│   ├── add.py
-│   ├── seed.py
-│   └── upgrade.py
-│
-├── templates/
-│   ├── project/
-│   └── plugins/
-│
-└── utils/
-    ├── copier.py
-    ├── filesystem.py
-    ├── hashing.py
-    └── manifest.py
 ```
 ---
 
