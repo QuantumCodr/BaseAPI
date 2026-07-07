@@ -1,26 +1,21 @@
-import argparse
+from argparse import ArgumentParser
 
 from cli.commands import version
+from cli.commands import doctor
 
 
 def create_parser():
 
-    parser = argparse.ArgumentParser(
-        prog="baseapi",
-        description=(
-            "BaseAPI developer CLI"
-        )
+    parser = ArgumentParser(
+        prog="baseapi"
     )
-
 
     subparsers = parser.add_subparsers(
-        dest="command"
+        dest="command",
+        required=True
     )
 
-
-    version.register(
-        subparsers
-    )
-
+    version.register(subparsers)
+    doctor.register(subparsers)
 
     return parser
